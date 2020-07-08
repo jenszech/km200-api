@@ -1,0 +1,56 @@
+{
+  "name": "homematic-js-km200-api",
+  "version": "0.1.0",
+  "description": "A nodejs module for connecting a buderus heater via km200 interface",
+  "main": "./lib/km200.js",
+  "types": "./lib/km200.d.ts",
+  "scripts": {
+    "start:demo": "nodemon src/example/example.ts",
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "pack": "npm pack",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepublishOnly": "npm test && npm run lint",
+    "prepare": "npm run build",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags && npm run build && npm run format"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenszech/homematic-js-km200-api.git"
+  },
+  "keywords": ["buderus", "km200", "npm", "module"],
+  "author": "Jens Zech <jzech@gmx.de> (https://github.com/jenszech)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jenszech/homematic-js-km200-api/issues"
+  },
+  "files": [
+    "lib/**/*",
+    "LICENCE"
+  ],
+  "homepage": "https://github.com/jenszech/homematic-js-km200-api#readme",
+  "dependencies": {
+    "@types/node-fetch": "^2.5.7",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.0",
+    "@types/node": "^12.12.47",
+    "expect": "latest",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.0.5",
+    "ts-jest": "^26.1.1",
+    "ts-node": "^8.10.2",
+    "tslint": "^6.1.2",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.9.5",
+    "jest-fetch-mock": "^3.0.3"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
+  }
+}
