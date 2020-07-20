@@ -1,6 +1,6 @@
 {
   "name": "km200-api",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A nodejs module for connecting a buderus heater via km200 interface",
   "main": "./lib/km200.js",
   "types": "./lib/km200.d.ts",
