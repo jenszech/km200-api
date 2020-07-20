@@ -1,6 +1,6 @@
 {
   "name": "homematic-js-km200-api",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A nodejs module for connecting a buderus heater via km200 interface",
   "main": "./lib/km200.js",
   "types": "./lib/km200.d.ts",
