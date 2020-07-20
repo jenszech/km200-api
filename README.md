@@ -6,7 +6,7 @@
 
 A nodejs module for connecting a buderus heater via km200 interface
 
-It is released as npm module under [homematic-js-km200-api](https://www.npmjs.com/package/homematic-js-km200-api)
+It is released as npm module under [km200-api](https://www.npmjs.com/package/km200-api)
 
 ## Usage
 ### Install
