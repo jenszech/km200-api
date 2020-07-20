@@ -14,11 +14,28 @@ It is released as npm module under [homematic-js-km200-api](https://www.npmjs.co
 npm install homematic-js-km200-api
 ```
 ### Basic Usage
-```javascript
-```
+AES key generator for the KM200 web gateway: https://ssl-account.com/km200.andreashahn.info/
 
 ```javascript
+import { Km200 } from 'homematic-js-km200-api';
+
+const key = '<INSERT YOUR KEY HERE>';
+const km200 = new Km200('192.168.10.22', 80, key);
+
+// Call a single Value from Buderus KM200
+console.log('Get Km200 Firmware Verion ... ');
+km200.getKM200('/gateway/versionFirmware').then((data) => {
+  console.log('Km200 Firmware: ' + data.value);
+});
+
+// Print a single API with all provided sub calls
+km200.printSingleApi('/gateway');
+
+// Print all provided API calls
+km200.printCompleteApi();
+
 ```
+
 ### More Examples
 More examples and details in [exampe.ts](./src/example/example.ts)
 

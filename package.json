@@ -38,13 +38,13 @@
   ],
   "homepage": "https://github.com/jenszech/homematic-js-km200-api#readme",
   "dependencies": {
-    "@types/node-fetch": "^2.5.7",
     "rijndael-js": "^2.0.0",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.0",
     "@types/node": "^12.12.47",
+    "@types/node-fetch": "^2.5.7",
     "@types/request": "^2.48.5",
     "@types/rijndael-js": "^1.0.0",
     "expect": "latest",

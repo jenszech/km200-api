@@ -20,7 +20,6 @@ export class HttpRequest {
 
   private fetchData(endpoint: string, options: object): Promise<any> {
     const url = 'http://' + this.host + ':' + this.port + this.url + endpoint;
-    console.log(url)
     return fetch(url, options)
       .then((response) => {
         if (!response.ok) {
@@ -40,4 +39,3 @@ export class HttpRequest {
     });
   }
 }
-export default HttpRequest;
