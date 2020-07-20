@@ -1,6 +1,6 @@
-# homematic-js-xmlapi
+# km200-api
 [![Release](https://img.shields.io/github/release/jenszech/homematic-js-km200-api.svg)](https://github.com/jenszech/homematic-js-xmlapi/releases/latest)
-[![npm version](https://badge.fury.io/js/homematic-js-km200-api.svg)](https://badge.fury.io/js/homematic-js-xmlapi)
+[![npm version](https://badge.fury.io/js/km200-api.svg)](https://badge.fury.io/js/homematic-js-xmlapi)
 [![Issues](https://img.shields.io/github/issues/jenszech/homematic-js-km200-api.svg)](https://github.com/hobbyquaker/XML-API/issues)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
