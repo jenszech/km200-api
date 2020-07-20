@@ -17,7 +17,7 @@ npm install homematic-js-km200-api
 AES key generator for the KM200 web gateway: https://ssl-account.com/km200.andreashahn.info/
 
 ```javascript
-import { Km200 } from 'homematic-js-km200-api';
+import { Km200 } from 'km200-api';
 
 const key = '<INSERT YOUR KEY HERE>';
 const km200 = new Km200('192.168.10.22', 80, key);
