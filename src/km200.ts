@@ -80,7 +80,12 @@ export class Km200 extends HttpRequest {
   }
 
   private async printCurrentApiLine(data: any, lvl: number) {
-    console.log('.'.repeat(lvl) + ' ' + data.id);
+    if (data.references) {
+      console.log('.'.repeat(lvl) + ' ' + data.id);
+    } else {
+      console.log('.'.repeat(lvl) + ' ' + data.id + ': ' + data.value + ' ' + (data.unitOfMeasure?data.unitOfMeasure:''));
+    }
+
     if (data.references) {
       for (const field of data.references) {
         await this.getAllSubApis(field.id, lvl + 1);
