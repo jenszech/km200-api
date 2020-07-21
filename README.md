@@ -1,6 +1,6 @@
 # km200-api
 [![Release](https://img.shields.io/github/release/jenszech/km200-api.svg)](https://github.com/jenszech/km200-api/releases/latest)
-[![npm version](https://badge.fury.io/js/km200-api.svg)](https://badge.fury.io/js/homematic-js-xmlapi)
+[![npm version](https://badge.fury.io/js/km200-api.svg)](https://badge.fury.io/js/km200-api)
 [![Issues](https://img.shields.io/github/issues/jenszech/km200-api.svg)](https://github.com/jenszech/km200-api/issues)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
