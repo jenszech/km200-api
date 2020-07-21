@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jenszech/homematic-js-km200-api.git"
+    "url": "git+https://github.com/jenszech/km200-api.git"
   },
   "keywords": [
     "buderus",
@@ -30,13 +30,13 @@
   "author": "Jens Zech <jzech@gmx.de> (https://github.com/jenszech)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jenszech/homematic-js-km200-api/issues"
+    "url": "https://github.com/jenszech/km200-api/issues"
   },
   "files": [
     "lib/**/*",
     "LICENCE"
   ],
-  "homepage": "https://github.com/jenszech/homematic-js-km200-api#readme",
+  "homepage": "https://github.com/jenszech/km200-api#readme",
   "dependencies": {
     "rijndael-js": "^2.0.0",
     "node-fetch": "^2.6.0"
