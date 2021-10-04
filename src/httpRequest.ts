@@ -18,14 +18,16 @@ export class HttpRequest {
     return true;
   }
 
-  private fetchData(endpoint: string, options: object): Promise<any> {
+  private fetchData(endpoint: string, options: object, json_type: boolean = true): Promise<any> {
     const url = 'http://' + this.host + ':' + this.port + this.url + endpoint;
     return fetch(url, options)
       .then((response) => {
         if (!response.ok) {
           throw new Error(response.statusText);
         }
-        this.checkContentType(response.headers.get('content-type'));
+        if (json_type) {
+          this.checkContentType(response.headers.get('content-type'));
+        }
         return response.text();
       })
       .catch((error: Error) => {
@@ -35,6 +37,12 @@ export class HttpRequest {
 
   public get(endpoint: string, options: object): Promise<any> {
     return this.fetchData(endpoint, options).then((response) => {
+      return response;
+    });
+  }
+
+  public set(endpoint: string, options: object): Promise<any> {
+    return this.fetchData(endpoint, options, false).then((response) => {
       return response;
     });
   }
