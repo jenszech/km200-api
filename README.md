@@ -17,7 +17,7 @@ It is released as npm module under [km200-api](https://www.npmjs.com/package/km2
 npm install km200-api
 ```
 ### Basic Usage
-AES key generator for the KM200 web gateway: https://ssl-account.com/km200.andreashahn.info/
+AES key generator for the KM200 web gateway: https://km200.andreashahn.info
 
 ```javascript
 import { Km200 } from 'km200-api';
