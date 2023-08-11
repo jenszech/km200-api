@@ -9,6 +9,12 @@ km200.getKM200('/gateway/versionFirmware').then((data) => {
   console.log('Km200 Firmware: ' + data.value);
 });
 
+// Endpoint must be writeable, check before with getKM200(<endpoint>)
+console.log('Setting a value ... ');
+km200.setKM200('/heatingCircuits/hc1/suWiThreshold', 18).then((_) => {
+  console.log('Setting value was successfull.');
+});
+
 // Print a single API with all provided sub calls
 km200.printSingleApi('/gateway');
 

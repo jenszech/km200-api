@@ -4,17 +4,6 @@ import RijndaelBlock = require('rijndael-js');
 import { randomBytes } from 'crypto';
 import { buderusApi } from './dataTypes';
 
-/*
-    const plainText = Buffer.from('Here is my plain text', 'utf8');
-    const encrypted = Buffer.from(this.cipher.encrypt(plainText, 128));
-    const decrypted = Buffer.from(this.cipher.decrypt(encrypted, 128));
-
-    console.log(plainText.toString('utf8'));
-    console.log(encrypted.toString('utf8'));
-    console.log(decrypted.toString('utf8'));
-    console.log('Done');
- */
-
 export class Km200 extends HttpRequest {
   private readonly key = randomBytes(32);
   private readonly cipher: RijndaelBlock;
@@ -51,11 +40,30 @@ export class Km200 extends HttpRequest {
     return plaintext.toString();
   }
 
+  private encrypt(body: object): string {
+    const str = JSON.stringify(body);
+    const enc = Buffer.from(this.cipher.encrypt(str, '128', this.iv));
+    return enc.toString('base64');
+  }
+
   public getKM200(command: string): Promise<any> {
     return this.get(command, this.options).then((body) => {
       if (body === null) return '';
       const decryptStr = this.decrypt(body);
       return JSON.parse(Km200.removeNonValidChars(decryptStr));
+    });
+  }
+
+  public setKM200(command: string, value: any): Promise<any> {
+    let op = {
+      method: 'PUT',
+      body: this.encrypt({ value: value }),
+    };
+    op = { ...op, ...this.options };
+
+    return this.set(command, op).then((body) => {
+      if (body === null || body === '') return true;
+      return false;
     });
   }
 
@@ -83,7 +91,9 @@ export class Km200 extends HttpRequest {
     if (data.references) {
       console.log('.'.repeat(lvl) + ' ' + data.id);
     } else {
-      console.log('.'.repeat(lvl) + ' ' + data.id + ': ' + data.value + ' ' + (data.unitOfMeasure?data.unitOfMeasure:''));
+      console.log(
+        '.'.repeat(lvl) + ' ' + data.id + ': ' + data.value + ' ' + (data.unitOfMeasure ? data.unitOfMeasure : ''),
+      );
     }
 
     if (data.references) {
